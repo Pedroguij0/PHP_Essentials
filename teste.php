@@ -53,6 +53,8 @@ else{
 </form>
 
 <?php
+$DataN = "";
+$nome = "";
 if($_SERVER['REQUEST_METHOD']== "POST"){
     $nome = $_POST["nome"];
     $DataN = $_POST["DataN"];
@@ -60,15 +62,11 @@ if($_SERVER['REQUEST_METHOD']== "POST"){
 $Data = (int)$DataN;
 $idade = date("Y") - $Data;
 echo "Seu nome é $nome e você nasceu $DataN, logo, você tem aproximadamente $idade anos";
-
-
 ?>
 
-
-
 <p>Formulário de Teste Carro</p>
-<form action="teste_carro.php" method="get">
-<label for="nome_do_carro">Nome do Carro</label>
+<form action="teste.php" method="get">
+<label for="nomeC">Nome do Carro</label>
 <input type="text" id="nomeC" name="nomeC">
 
 <br>
@@ -80,17 +78,36 @@ echo "Seu nome é $nome e você nasceu $DataN, logo, você tem aproximadamente $
 </form>
 
 <?php
-if(isset($_GET['nome_do_carro']) && isset($_GET['DataL'])){
-    $nome_do_carro = $_GET["nome_do_carro"];
+if(isset($_GET['nomeC']) && isset($_GET['DataL'])){
+    $nomeC = $_GET["nomeC"];
     $DataL = $_GET["DataL"];
 }
 else{
     echo "Nenhum dado foi enviado";
 }
-
-$idadeC = date("Y") - $DataL;
-echo "O nome do carro é" .htmlspecialchars($nome_do_carro)."e foi lançado $DataL, logo, você ele foi lançado há $idadeC anos";
+$Data = (int)$DataL;
+$idadeC = date("Y") - $Data;
+echo "O nome do carro é "  .htmlspecialchars($nomeC). " e foi lançado $DataL, logo, ele foi lançado há $idadeC anos";
 ?>
+<?php require("cabecalho.php")?>
+
+<form action="teste.php" method="post">
+<label for="email">Email</label>
+<input type="text" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+<input type="submit" value="Enviar">
+
+<?php
+if (isset($_POST["email"])){
+    $email =$_POST["email"];
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "O e-mail é válido.";
+    } else {
+        echo "O e-mail não é válido.";
+    }
+}
+?>
+
+
 </body>
 </html>
 
