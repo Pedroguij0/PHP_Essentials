@@ -1,0 +1,93 @@
+body{
+    background-image: url(spider.png);
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 300px;
+    max-height: 100px;
+}
+
+.formulario{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    position: relative;
+    justify-content: center;
+    left: 750px;
+    border-radius: 7px;
+    box-shadow: 2px 3px 5px;
+    max-width: 320px;
+    display: flex;
+    top: 200px;
+    padding: 15px 12px;
+    background-color: rgb(236, 16, 16);
+}
+
+.labels{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.homem_aranha{
+    height: auto;
+    width: 300px;
+    position: relative;
+    top: 600px;
+    left: 450px;
+}
+
+.homem_aranha2{
+    height: auto;
+    z-index: 200;
+    width: 300px;
+    position: relative;
+    top: 600px;
+    left: 770px;
+    z-index: 333;
+}
+
+.inputs{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    max-width: 1000px;
+    width: 300px;
+    height: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3px;
+    border-radius: 7px;
+    border: black solid 1px;
+    background-color: rgb(255, 255, 255);
+}
+
+.Data{   
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.enviar{
+    top: 10px;
+    background-color: rgb(255, 255, 255); 
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    justify-content: center;
+}
+.limpar{
+    top: 10px;
+    background-color: rgb(250, 244, 244); 
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    justify-content: center;
+}

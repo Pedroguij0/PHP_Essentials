@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spiderman.css">
     <title>Formulário Do homem aranha</title>
 </head>
 <body>
-<form action="spiderman.php" method="post">
-<label for="Nome">Nome Completo</label>
-<input type="text" id="nome" name="nome">
-<br>
-<label for="Email">Email</label>
-<input type="text" id="email" name="e_mail" value="email">
-<br>
-<label for="DataN">Data de Nascimento</label>
-<input type="date" id="DataN" name="DataN">
-<br>
-<label for="Genero">Gênero:</label>
-
-<input type="radio" id="masculino" name="genero" value="masculino">
-<label for="Masculino">Masculino</label>
-
-<input type="radio" id="feminino" name="genero" value="feminino">
-<label for="Feminino">Feminino</label>
-
-<input type="radio" id="outros" name="genero" value="outros">
-<label for="Outros">Outros</label>
-
-<br>
-<label for="Feminino">Biografia</label>
-<input type="textarea" id="bio" name="biografia" value="bio">
-
-<input type="submit" value = "Enviar">
-</form>
+    <img src="./spider5.png" alt="" class="homem_aranha">
+    <img src="./spider5_2.png" alt="" class="homem_aranha2">
+<div class = "formulario">
+    <form action="spiderman.php" method="post">
+        <label for="Nome" class = "labels">Nome Completo</label>
+        <input type="text" id="nome" name="nome" class= "inputs">
+        <br>
+        <label for="Email"  class = "labels">Email</label>
+        <input type="text" id="email" name="e_mail" class= "inputs">
+        <br>
+        <label for="DataN"  class = "labels">Data de Nascimento</label>
+        <input type="date" id="DataN" name="DataN" class= "inputs" class = "Data">
+        <br>
+        <label for="Genero"  class = "labels">Gênero:</label>
+        <div class="generos">
+            <input type="radio" id="masculino" name="genero">
+            <label for="Masculino">Masculino</label>
+            
+            <input type="radio" id="feminino" name="genero">
+            <label for="Feminino">Feminino</label>
+            
+            <input type="radio" id="outros" name="genero" >
+            <label for="Outros">Outros</label>
+        </div>
+        
+        <br>
+        <label for="Biografia"  class = "labels">Biografia</label>
+        <input type="textarea" id="bio" name="biografia" class= "inputs">
+        
+        <input type="submit" value = "Enviar" class="enviar ">
+        <input type="reset" value = "Cancelar" class="limpar ">
+    </form>
+</div>
 
 <?php
 if($_SERVER['REQUEST_METHOD']== "POST"){
@@ -72,5 +79,6 @@ if($_SERVER['REQUEST_METHOD']== "POST"){
 
 }        
 ?>
+
 </body>
 </html>
