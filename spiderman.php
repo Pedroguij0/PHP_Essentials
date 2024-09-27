@@ -10,7 +10,7 @@
     <img src="./spider5.png" alt="" class="homem_aranha">
     <img src="./spider5_2.png" alt="" class="homem_aranha2">
 <div class = "formulario">
-    <form action="spiderman.php" method="post">
+    <form action="verify.php" method="post">
         <label for="Nome" class = "labels">Nome Completo</label>
         <input type="text" id="nome" name="nome" class= "inputs">
         <br>
@@ -40,45 +40,5 @@
         <input type="reset" value = "Cancelar" class="limpar ">
     </form>
 </div>
-
-<?php
-if($_SERVER['REQUEST_METHOD']== "POST"){
-    $nome = $_POST["nome"];
-    $email = $_POST["e_mail"];
-    $DataN = $_POST["DataN"];
-    $biografia = $_POST["biografia"]; 
-    if (isset($_POST["masc"])){
-        $genero = $_POST["masc"];
-    }
-    elseif (isset($_POST["fem"])){
-        $genero = $_POST["fem"];
-    }
-    elseif (isset($_POST["others"])){
-        $genero = $_POST["others"];
-    }
-    
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "O e-mail é válido.<br>";
-    } 
-    else{
-        echo "O e-mail não é válido.<br>";
-    }
-    
-    if (!empty($nome)||!empty($email)||!empty($DataN)||!empty($genero)||!empty($biografia)){
-        echo"Formulário enviado com sucesso!<br>";
-    }
-    else{
-        echo "Algum campo não foi preenchido, preencha-o antes de enviar o formulário.<br>";
-    }
-
-    if (preg_match('/ /', $nome)) {
-        echo " O nome contem dois ou mais nomes\n";
-    } else {
-        echo " O nome contem apenas um nome.\n";
-    }
-
-}        
-?>
-
 </body>
 </html>
