@@ -15,7 +15,7 @@ echo"<b>Isset</b><br>";
 $teste = "testando o php";
 
 if(isset($teste)){
-    echo  class=!"A variável teste existe e tem valor: $teste<br>";
+    echo "A variável teste existe e tem valor: $teste<br>";
 }
 else{
     echo "A variável teste não existe ou não esta preenchida";
